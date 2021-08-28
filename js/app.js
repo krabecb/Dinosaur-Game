@@ -2,6 +2,14 @@ const gameContainer = document.querySelector('.game-container')
 const player = document.querySelector('.player')
 const obstacle = document.querySelector('.obstacle')
 
+let counter = 0
+
+const score = document.createElement("h3")
+score.classList.add("score")
+score.innerHTML = `Score: ${counter}`
+gameContainer.prepend(score)
+
+
 function jump() {
 	if(player.classList !== "animate") {
 		player.classList.add("animate")
@@ -17,9 +25,20 @@ const checkCollision = setInterval(() => {
 	if(obstacleLeft < 20 && obstacleLeft > 0 && playerTop >= 130) {
 		obstacle.style.animation = "none"
 		obstacle.style.display = "none"
+		clearInterval(checkCollision)
+		clearInterval(addScore)
 		alert("YOU LOSE!")
 	}
 },10)
+
+const addScore = setInterval(() => {
+	const playerTop = parseInt(window.getComputedStyle(player).getPropertyValue("top"))
+	const obstacleLeft = parseInt(window.getComputedStyle(obstacle).getPropertyValue("left"))
+	if(playerTop === 100) {
+		counter = counter += 1
+	}
+	score.innerHTML = `Score: ${counter}`
+},250)
 
 document.body.addEventListener("keyup", (event) => {
 	if(event.keyCode === 32) {
