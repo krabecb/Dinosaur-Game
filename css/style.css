@@ -22,6 +22,14 @@ body, html {
 	background-color: red;
 	position:  relative;
 	top: 150px;
+	animation: jump 500ms infinite;
+}
+
+@keyframes jump {
+	0%{top: 150px;}
+	30%{top: 100px;}
+	70%{top: 100px;}
+	100%{top: 150px;}
 }
 
 .obstacle {
@@ -31,4 +39,11 @@ body, html {
 	position: relative;
 	top: 130px;
 	left: 480px;
+	/*linear = smooth animation*/
+	animation: obstacle 1s infinite linear;
+}
+
+@keyframes obstacle {
+	0%{left: 480px;}
+	100%{left: -0.5%;}
 }
