@@ -88,6 +88,17 @@ body, html {
 	top: 130px;
 	left: 480px;
 	/*linear = smooth animation*/
+	/*animation: obstacle 1s infinite linear;*/
+}
+
+.obstacle-start {
+	height: 20px;
+	width: 20px;
+	background-color: #E0B89B;
+	position: relative;
+	top: 130px;
+	left: 480px;
+	/*linear = smooth animation*/
 	animation: obstacle 1s infinite linear;
 }
 

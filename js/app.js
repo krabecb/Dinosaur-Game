@@ -51,6 +51,13 @@ const addScore = setInterval(() => {
 
 
 
+const startButtonLocation = document.querySelector(".start-button")
+startButtonLocation.addEventListener("click", () => {
+	obstacle.classList.remove("obstacle")
+	obstacle.classList.add("obstacle-start")
+	startButtonLocation.style.display = "none"
+})
+
 document.body.addEventListener("keyup", (event) => {
 	if(event.keyCode === 32) {
 		jump()
