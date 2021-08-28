@@ -43,8 +43,13 @@ const addScore = setInterval(() => {
 	score.innerHTML = `Points: ${counter}`
 },5)
 
+
+
+
 document.body.addEventListener("keyup", (event) => {
 	if(event.keyCode === 32) {
 		jump()
 	}
 })
+
+document.body.addEventListener("touchend", () => jump())
