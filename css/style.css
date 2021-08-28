@@ -66,10 +66,10 @@ body, html {
 	font-family: 'Roboto', sans-serif;
 	font-size: 18px;
 	height: 30px;
-	width: 65px;
+	width: 100px;
 	border: none;
 	border-radius: 5px;
-	transform: translate(220.515px, 0px);
+	transform: translate(200px, 0px);
 }
 
 .player {
@@ -98,8 +98,6 @@ body, html {
 	position: relative;
 	top: 130px;
 	left: 480px;
-	/*linear = smooth animation*/
-	/*animation: obstacle 1s infinite linear;*/
 }
 
 .obstacle-start {
