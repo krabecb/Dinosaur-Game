@@ -1,3 +1,4 @@
+const containerForGameContainer = document.querySelector('.container-for-a-container')
 const gameContainer = document.querySelector('.game-container')
 const player = document.querySelector('.player')
 const obstacle = document.querySelector('.obstacle')
@@ -9,6 +10,10 @@ score.classList.add("score")
 score.innerHTML = `Points: ${counter}`
 gameContainer.prepend(score)
 
+const startButton = document.createElement("button")
+startButton.classList.add("start-button")
+startButton.innerHTML = "Start"
+containerForGameContainer.appendChild(startButton)
 
 function jump() {
 	if(player.classList !== "animate") {
