@@ -21,4 +21,8 @@ const checkCollision = setInterval(() => {
 	}
 },10)
 
-gameContainer.addEventListener("click", () => {jump()})
+document.body.addEventListener("keyup", (event) => {
+	if(event.keyCode === 32) {
+		jump()
+	}
+})
