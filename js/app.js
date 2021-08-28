@@ -29,13 +29,26 @@ const checkCollision = setInterval(() => {
 	const obstacleLeft = parseInt(window.getComputedStyle(obstacle).getPropertyValue("left"))
 	if(obstacleLeft < 20 && obstacleLeft > 0 && playerTop >= 130) {
 		obstacle.style.animation = "none"
-		obstacle.style.display = "none"
-		clearInterval(checkCollision)
-		clearInterval(addScore)
+
 		const youLose = document.createElement("h1")
 		youLose.classList.add("you-lose")
 		youLose.innerHTML = "YOU LOST LMAO"
 		gameContainer.appendChild(youLose)
+
+		const restart = document.createElement("button")
+		restart.classList.add("restart")
+		restart.innerHTML = "Restart"
+		gameContainer.appendChild(restart)
+
+		const restartLocation = document.querySelector(".restart")
+		restartLocation.addEventListener("click", () => {
+			counter = 0
+			score.innerHTML = `Points: ${counter}`
+			obstacle.style.animation = "obstacle 1s infinite linear"
+			const youLoseLocation = document.querySelector('.you-lose')
+			youLoseLocation.remove()
+			restartLocation.remove()
+		})
 	}
 },10)
 

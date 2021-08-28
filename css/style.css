@@ -61,6 +61,17 @@ body, html {
 	text-align: center;
 }
 
+.restart {
+	background-color: #C7C7A9;
+	font-family: 'Roboto', sans-serif;
+	font-size: 18px;
+	height: 30px;
+	width: 65px;
+	border: none;
+	border-radius: 5px;
+	transform: translate(220.515px, 0px);
+}
+
 .player {
 	height: 50px;
 	width: 20px;
