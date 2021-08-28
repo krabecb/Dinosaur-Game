@@ -1,32 +1,63 @@
 body, html {
-	background-image: linear-gradient(to right, #f6d365 0%, #fda085 100%);
+	/*background-image: linear-gradient(-225deg, #1BBFB7 0%, #BCBF7C 100%);
 	background-position: center;
 	background-repeat: no-repeat;
-	background-size: cover;
+	background-size: cover;*/
+	background-color: #24201F;
 	height: 100%;
 	margin: 0;
 }
 
+.title-container {
+	display:  flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.title {
+	background-image: linear-gradient(to right, #FF4266 0%, #FC9D9A 25%, #FACDAC 50%, #C7C7A9 75%, #84B09D 100%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	font-family: 'Rampart One', cursive;
+	font-size: 50px;
+	margin: 0;
+	width: max-content;
+	transform: translate(0%, 200%);
+}
+
+.description {
+	background-image: linear-gradient(to right, #FF4266 0%, #FC9D9A 25%, #FACDAC 50%, #C7C7A9 75%, #84B09D 100%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	font-family: 'Roboto', sans-serif;
+	transform: translate(0%, 800%);
+	margin:  0;
+}
+
 .score {
+	font-family: 'Roboto', sans-serif;
+	color: #84B09D;
 	position: fixed;
 	display: flex;
 	margin: 0;
 }
 
 .game-container {
+	background: linear-gradient(to bottom, #323232 0%, #3F3F3F 40%, #1C1C1C 150%), linear-gradient(to top, rgba(255,255,255,0.40) 0%, rgba(0,0,0,0.25) 200%);
+ 	background-blend-mode: multiply;
 	position: fixed;
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
 	height: 200px;
 	width: 500px;
-	border: 1px solid black;
+	border: 2px solid #FC9D9A;
 }
 
 .player {
 	height: 50px;
 	width: 20px;
-	background-color: red;
+	background-color: #FF4266;
 	position:  relative;
 	top: 150px;
 }
@@ -45,7 +76,7 @@ body, html {
 .obstacle {
 	height: 20px;
 	width: 20px;
-	background-color: blue;
+	background-color: #E0B89B;
 	position: relative;
 	top: 130px;
 	left: 480px;

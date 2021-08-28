@@ -6,7 +6,7 @@ let counter = 0
 
 const score = document.createElement("h3")
 score.classList.add("score")
-score.innerHTML = `Score: ${counter}`
+score.innerHTML = `Points: ${counter}`
 gameContainer.prepend(score)
 
 
@@ -34,11 +34,11 @@ const checkCollision = setInterval(() => {
 const addScore = setInterval(() => {
 	const playerTop = parseInt(window.getComputedStyle(player).getPropertyValue("top"))
 	const obstacleLeft = parseInt(window.getComputedStyle(obstacle).getPropertyValue("left"))
-	if(playerTop === 100) {
+	if(obstacleLeft < 30 && playerTop <= 129) {
 		counter = counter += 1
 	}
-	score.innerHTML = `Score: ${counter}`
-},250)
+	score.innerHTML = `Points: ${counter}`
+},5)
 
 document.body.addEventListener("keyup", (event) => {
 	if(event.keyCode === 32) {
