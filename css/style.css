@@ -38,7 +38,6 @@ body, html {
 	font-family: 'Roboto', sans-serif;
 	color: #84B09D;
 	position: fixed;
-	display: flex;
 	margin: 0;
 }
 
@@ -52,6 +51,14 @@ body, html {
 	height: 200px;
 	width: 500px;
 	border: 2px solid #FC9D9A;
+}
+
+.you-lose {
+	font-family: 'Rampart One', cursive;
+	font-size: 50px;
+	color: #FACDAC;
+	margin: 0;
+	text-align: center;
 }
 
 .player {

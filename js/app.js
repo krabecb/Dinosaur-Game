@@ -27,7 +27,10 @@ const checkCollision = setInterval(() => {
 		obstacle.style.display = "none"
 		clearInterval(checkCollision)
 		clearInterval(addScore)
-		alert("YOU LOSE!")
+		const youLose = document.createElement("h1")
+		youLose.classList.add("you-lose")
+		youLose.innerHTML = "YOU LOST LMAO"
+		gameContainer.appendChild(youLose)
 	}
 },10)
 
