@@ -80,6 +80,7 @@ body, html {
 	position:  relative;
 	top: 150px;
 	margin: 0;
+	z-index: 1;
 }
 
 .animate {
@@ -102,6 +103,7 @@ body, html {
 	left: 480px;
 	margin: 0;
 	float: left;
+	z-index: 2;
 }
 
 .obstacle-start {
@@ -115,6 +117,7 @@ body, html {
 	float: left;
 	/*linear = smooth animation*/
 	animation: obstacle 1s infinite linear;
+	z-index: 2;
 }
 
 @keyframes obstacle {
