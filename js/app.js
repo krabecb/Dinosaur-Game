@@ -34,7 +34,7 @@ function startTimer() {
 		obstacle.style.left = `${obstaclePos -= 2}px`
 		// console.log(obstaclePos)
 
-		if(obstacleLeft < 20 && obstacleLeft > 0 && playerTop >= 130) {
+		if(obstacleLeft <= 50 && obstacleLeft > 30 && playerTop >= 130) {
 			// obstacle.style.animation = "none"
 			clearInterval(checkCollision)
 			gameOver = true
@@ -75,7 +75,7 @@ function startScoreTracker() {
 	const addScore = setInterval(() => {
 		const playerTop = parseInt(window.getComputedStyle(player).getPropertyValue("top"))
 		const obstacleLeft = parseInt(window.getComputedStyle(obstacle).getPropertyValue("left"))
-		if(obstacleLeft < 30 && playerTop <= 129 && gameOver === false) {
+		if(obstacleLeft < 50 && obstacleLeft > 30 && playerTop <= 129 && gameOver === false) {
 			counter = counter += 1
 		} 
 		if(gameOver === true) {
