@@ -1,8 +1,4 @@
 body, html {
-	/*background-image: linear-gradient(-225deg, #1BBFB7 0%, #BCBF7C 100%);
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: cover;*/
 	background-color: #24201F;
 	height: 100%;
 	margin: 0;
@@ -42,8 +38,6 @@ body, html {
 }
 
 .game-container {
-	/*background: linear-gradient(to bottom, #323232 0%, #3F3F3F 40%, #1C1C1C 150%), linear-gradient(to top, rgba(255,255,255,0.40) 0%, rgba(0,0,0,0.25) 200%);
- 	background-blend-mode: multiply;*/
 	position: fixed;
 	top: 50%;
 	left: 50%;
@@ -80,7 +74,6 @@ body, html {
 	position:  relative;
 	top: 150px;
 	margin: 0;
-	z-index: 2;
 }
 
 .animate {
@@ -103,7 +96,6 @@ body, html {
 	left: 480px;
 	margin: 0;
 	float: left;
-	z-index: 1;
 }
 
 .obstacle-start {
@@ -117,12 +109,11 @@ body, html {
 	float: left;
 	/*linear = smooth animation*/
 	animation: obstacle 1s infinite linear;
-	z-index: 1;
 }
 
 @keyframes obstacle {
 	0%{left: 480px;}
-	100%{left: -0.5%;}
+	100%{left: 0px;}
 }
 
 .start-button {
