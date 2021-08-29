@@ -146,6 +146,7 @@ body, html {
     	}
     	.you-lose {
     		font-size: 25px;
+    		 transform: translate(10px, 0px);
     	}
     	.restart {
     		height: 40px;
