@@ -67,14 +67,15 @@ body, html {
 	transform: translate(200px, 0px);
 }
 
-/*.player {
+.player {
 	height: 50px;
 	width: 20px;
 	background-color: #FF4266;
 	position:  relative;
 	top: 150px;
-	margin: 0;
-}*/
+	float: right;
+	transform: translate(-480px, 0px);
+}
 
 .animate {
 	animation: jump 500ms;
@@ -94,8 +95,8 @@ body, html {
 	position: relative;
 	top: 130px;
 	left: 480px;
-	margin: 0;
 	float: left;
+	transform: translate(0px, 50px);
 }
 
 .obstacle-start {
@@ -105,8 +106,8 @@ body, html {
 	position: relative;
 	top: 130px;
 	left: 480px;
-	margin: 0;
 	float: left;
+	transform: translate(0px, 50px);
 	animation: obstacle 1s infinite linear;
 }
 
