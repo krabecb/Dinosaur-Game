@@ -98,10 +98,12 @@ function handleDeviceChange(event) {
 	}
 }
 
+handleDeviceChange(mediaQuery)
 
 
 
-mediaQuery.addListener(handleDeviceChange)
+
+// mediaQuery.addListener(handleDeviceChange)
 
 const startButtonLocation = document.querySelector(".start-button")
 startButtonLocation.addEventListener("click", () => {
