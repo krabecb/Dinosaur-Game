@@ -3,7 +3,11 @@ const gameContainer = document.querySelector('.game-container')
 const player = document.querySelector('.player')
 const obstacle = document.querySelector('.obstacle')
 
+const mediaQuery = window.matchMedia('(max-width: 414px)')
+
 let counter = 0
+let startTimerSpeed = 1
+let obstaclePosWidth = 480
 let obstaclePos = 480
 let gameOver = false
 
@@ -51,7 +55,7 @@ function startTimer() {
 
 			const restartLocation = document.querySelector(".restart")
 			restartLocation.addEventListener("click", () => {
-				obstaclePos = 480
+				obstaclePos = obstaclePosWidth
 				obstacle.style.left = `${obstaclePos}px`
 				counter = 0
 				score.innerHTML = `Points: ${counter}`
@@ -66,9 +70,9 @@ function startTimer() {
 		}
 
 		if(obstaclePos === 0) {
-			obstaclePos = 480
+			obstaclePos = obstaclePosWidth
 		}
-	},1)
+	},startTimerSpeed)
 }
 
 function startScoreTracker() {
@@ -85,8 +89,19 @@ function startScoreTracker() {
 	},5)
 }
 
+function handleDeviceChange(event) {
+	if(event.matches) {
+		console.log("Media query matched!")
+		obstaclePos = 280
+		obstaclePosWidth = 280
+		startTimerSpeed = 10
+	}
+}
 
 
+
+
+mediaQuery.addListener(handleDeviceChange)
 
 const startButtonLocation = document.querySelector(".start-button")
 startButtonLocation.addEventListener("click", () => {
