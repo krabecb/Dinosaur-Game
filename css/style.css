@@ -101,23 +101,6 @@ body, html {
 	transform: translate(0px, 50px);
 }
 
-.obstacle-start {
-	height: 20px;
-	width: 20px;
-	background-color: #E0B89B;
-	position: relative;
-	top: 130px;
-	left: 480px;
-	float: left;
-	transform: translate(0px, 50px);
-	animation: obstacle 1s infinite linear;
-}
-
-/*@keyframes obstacle {
-	0%{left: 480px;}
-	100%{left: 0px;}
-}*/
-
 .start-button {
 	background-color: #FC9D9A;
 	font-family: 'Roboto', sans-serif;
@@ -127,6 +110,12 @@ body, html {
 	border: none;
 	border-radius: 5px;
 	transform: translate(0px, 360px);
+}
+
+.high-score {
+	font-family: 'Roboto', sans-serif;
+	color: #FC9D9A;
+	transform: translate(0px, 350px);
 }
 
 
@@ -160,6 +149,9 @@ body, html {
 			height: 40px;
 			width: 100px;
 			font-size: 23px;
+			transform: translate(0px, 440px);
+		}
+		.high-score {
 			transform: translate(0px, 440px);
 		}
 }

@@ -6,6 +6,8 @@ const obstacle = document.querySelector('.obstacle')
 const mediaQuery = window.matchMedia('(max-width: 414px)')
 
 let counter = 0
+let highScoreTracker = 0
+let highScoreActive = false
 let startTimerSpeed = 1
 let obstaclePosWidth = 480
 let obstaclePos = 480
@@ -15,6 +17,10 @@ const score = document.createElement("h3")
 score.classList.add("score")
 score.innerHTML = `Points: ${counter}`
 gameContainer.prepend(score)
+
+const highScore = document.createElement('h2')
+highScore.classList.add('high-score')
+highScore.innerHTML = `High score: ${highScoreTracker}`
 
 const startButton = document.createElement("button")
 startButton.classList.add("start-button")
@@ -36,12 +42,15 @@ function startTimer() {
 		let obstacleLeft = parseInt(window.getComputedStyle(obstacle).getPropertyValue("left"))
 		
 		obstacle.style.left = `${obstaclePos -= 2}px`
-		// console.log(obstaclePos)
 
 		if(obstacleLeft <= 50 && obstacleLeft > 30 && playerTop >= 130) {
-			// obstacle.style.animation = "none"
 			clearInterval(checkCollision)
 			gameOver = true
+
+			if(counter > highScoreTracker) {
+				highScoreTracker = counter
+				highScore.innerHTML = `High score: ${highScoreTracker}`
+			}
 
 			const youLose = document.createElement("h1")
 			youLose.classList.add("you-lose")
@@ -57,10 +66,15 @@ function startTimer() {
 			restartLocation.addEventListener("click", () => {
 				obstaclePos = obstaclePosWidth
 				obstacle.style.left = `${obstaclePos}px`
+
+				if(highScoreActive === false) {
+					highScoreActive = true
+					containerForGameContainer.appendChild(highScore)
+				}
+
 				counter = 0
 				score.innerHTML = `Points: ${counter}`
 				gameOver = false
-				// obstacle.style.animation = "obstacle 1s infinite linear"
 				const youLoseLocation = document.querySelector('.you-lose')
 				youLoseLocation.remove()
 				restartLocation.remove()
@@ -103,14 +117,10 @@ handleDeviceChange(mediaQuery)
 
 
 
-// mediaQuery.addListener(handleDeviceChange)
-
 const startButtonLocation = document.querySelector(".start-button")
 startButtonLocation.addEventListener("click", () => {
 	startTimer()
 	startScoreTracker()
-	// obstacle.classList.remove("obstacle")
-	// obstacle.classList.add("obstacle-start")
 	startButtonLocation.style.display = "none"
 })
 
