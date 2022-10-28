@@ -5,14 +5,19 @@ body, html {
 }
 
 .container-for-a-container {
-	/* display:  flex;
-	flex-direction: column;
-	align-items: center; */
 	overflow: hidden;
 }
 
+@keyframes changeColor {
+    from, to { background-color: #FF4266; }
+    30%      { background-color: #FC9D9A; }
+    60%      { background-color: #FACDAC; }
+    80%      { background-color: #84B09D; }
+}
+
 .title {
-	background-image: linear-gradient(to right, #FF4266 0%, #FC9D9A 25%, #FACDAC 50%, #C7C7A9 75%, #84B09D 100%);
+	background-color: #FF4266;
+	animation: changeColor 4s infinite;
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
 	font-family: 'Rampart One', cursive;
@@ -35,7 +40,6 @@ body, html {
 .score {
 	font-family: 'Roboto', sans-serif;
 	color: #84B09D;
-	/* position: fixed; */
 	margin: 0;
 }
 
