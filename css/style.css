@@ -125,7 +125,7 @@ body, html {
 .high-score {
 	font-family: 'Roboto', sans-serif;
 	color: #FC9D9A;
-	transform: translate(0px, 310px);
+	/* transform: translate(0px, 310px); */
 }
 
 audio::-webkit-media-controls-panel {
