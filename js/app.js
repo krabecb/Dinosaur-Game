@@ -129,6 +129,7 @@ startButtonLocation.addEventListener("click", () => {
 	audioTag.classList = "audio"
 	audioTag.setAttribute("controls", "")
 	audioTag.setAttribute("autoplay", "")
+	audioTag.setAttribute("loop", "")
 	containerForGameContainer.appendChild(audioTag)
 
 	let sourceTag = document.createElement("source")
