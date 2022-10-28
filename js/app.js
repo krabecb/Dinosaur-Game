@@ -3,7 +3,7 @@ const gameContainer = document.querySelector('.game-container')
 const player = document.querySelector('.player')
 const obstacle = document.querySelector('.obstacle')
 
-const mediaQuery = window.matchMedia('(max-width: 414px)')
+const mediaQuery = window.matchMedia('(orientation:portrait)')
 
 let counter = 0
 let highScoreTracker = 0
