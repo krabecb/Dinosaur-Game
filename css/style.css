@@ -54,7 +54,7 @@ body, html {
 	transform: translate(-50%, -50%); */
 	height: 200px;
 	width: 500px;
-	border: 2px solid #FC9D9A;
+	border-bottom: 2px solid #FC9D9A;
 	margin: 0;
 	margin-bottom: 5%;
 }
@@ -128,9 +128,22 @@ body, html {
 	transform: translate(0px, 310px);
 }
 
-.audio {
-	/* transform: translate(0px, 450px); */
-	margin-bottom: 5%;
+audio::-webkit-media-controls-panel {
+	background-color: #FF4266;
+}
+
+audio::-webkit-media-controls-mute-button {
+	background-color: #FC9D9A;
+	border-radius: 50%;
+}
+
+audio::-webkit-media-controls-play-button {
+background-color: #FACDAC;
+border-radius: 50%;
+}
+
+audio::-webkit-media-controls-play-button:hover {
+background-color: #E0B89B;
 }
 
 

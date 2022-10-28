@@ -124,6 +124,17 @@ startButtonLocation.addEventListener("click", () => {
 	startTimer()
 	startScoreTracker()
 	startButtonLocation.style.display = "none"
+
+	let audioTag = document.createElement("audio")
+	audioTag.classList = "audio"
+	audioTag.setAttribute("controls", "")
+	audioTag.setAttribute("autoplay", "")
+	containerForGameContainer.appendChild(audioTag)
+
+	let sourceTag = document.createElement("source")
+	sourceTag.setAttribute("src", "./assets/soundtrack.wav")
+	sourceTag.setAttribute("type", "audio/wav")
+	audioTag.appendChild(sourceTag)
 })
 
 document.body.addEventListener("keyup", (event) => {
