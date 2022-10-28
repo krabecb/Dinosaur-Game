@@ -45,6 +45,8 @@ function startTimer() {
 
 		if(obstacleLeft <= 50 && obstacleLeft > 30 && playerTop >= 108) {
 			clearInterval(checkCollision)
+			const wowAudio = document.querySelector('.wow-audio')
+			wowAudio.play()
 			gameOver = true
 
 			if(counter > highScoreTracker) {
