@@ -1,4 +1,4 @@
-const containerForGameContainer = document.querySelector('.container-for-a-container')
+const containerForGameContainer = document.querySelector('.flex-container')
 const gameContainer = document.querySelector('.game-container')
 const player = document.querySelector('.player')
 const obstacle = document.querySelector('.obstacle')
@@ -39,11 +39,13 @@ function jump() {
 function startTimer() {
 	const checkCollision = setInterval(() => {
 		const playerTop = parseInt(window.getComputedStyle(player).getPropertyValue("top"))
+		// console.log(playerTop)
 		let obstacleLeft = parseInt(window.getComputedStyle(obstacle).getPropertyValue("left"))
+		// console.log(obstacleLeft)
 		
 		obstacle.style.left = `${obstaclePos -= 2}px`
 
-		if(obstacleLeft <= 50 && obstacleLeft > 30 && playerTop >= 130) {
+		if(obstacleLeft <= 50 && obstacleLeft > 30 && playerTop >= 108) {
 			clearInterval(checkCollision)
 			gameOver = true
 
