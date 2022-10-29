@@ -83,8 +83,8 @@ function startTimer() {
 
 				if(highScoreActive === false) {
 					highScoreActive = true
-					let audioTag = document.querySelector('.audio')
-					containerForGameContainer.insertBefore(highScore, audioTag)
+					let musicContainerLoc = document.querySelector('.music-container')
+					containerForGameContainer.insertBefore(highScore, musicContainerLoc)
 				}
 
 				counter = 0
