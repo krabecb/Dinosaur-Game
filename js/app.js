@@ -64,8 +64,10 @@ function startTimer() {
 
 			const restartLocation = document.querySelector(".restart")
 			restartLocation.addEventListener("click", () => {
-				// const wowAudio = document.querySelector('.wow-audio')
-				// wowAudio.play()
+				const wowAudioTag = document.querySelector('.audio-wow')
+				if(wowAudioTag !== null) {
+					document.querySelector('.audio-wow').remove()
+				}
 				let audioTag = document.createElement("audio")
 				audioTag.classList = "audio-wow"
 				audioTag.setAttribute("autoplay", "")
