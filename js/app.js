@@ -12,7 +12,7 @@ let startTimerSpeed = 1
 let obstaclePosWidth = 480
 let obstaclePos = 480
 let gameOver = false
-let randNum = Math.random() * (4 - 2) + 2
+let randNum = Math.random() * (3.5 - 2) + 2
 
 const score = document.createElement("h3")
 score.classList.add("score")
@@ -101,7 +101,7 @@ function startTimer() {
 
 		if(obstaclePos <= 0) {
 			obstaclePos = obstaclePosWidth
-			randNum = Math.random() * (4 - 2) + 2
+			randNum = Math.random() * (3.5 - 2) + 2
 		}
 	},startTimerSpeed)
 }
