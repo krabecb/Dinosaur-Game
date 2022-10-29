@@ -41,12 +41,10 @@ function startTimer() {
 		const playerTop = parseInt(window.getComputedStyle(player).getPropertyValue("top"))
 		let obstacleLeft = parseInt(window.getComputedStyle(obstacle).getPropertyValue("left"))
 		
-		obstacle.style.left = `${obstaclePos -= 2}px`
+		obstacle.style.left = `${obstaclePos -= 2.5}px`
 
 		if(obstacleLeft <= 50 && obstacleLeft > 30 && playerTop >= 108) {
 			clearInterval(checkCollision)
-			const wowAudio = document.querySelector('.wow-audio')
-			wowAudio.play()
 			gameOver = true
 
 			if(counter > highScoreTracker) {
@@ -66,6 +64,8 @@ function startTimer() {
 
 			const restartLocation = document.querySelector(".restart")
 			restartLocation.addEventListener("click", () => {
+				const wowAudio = document.querySelector('.wow-audio')
+				wowAudio.play()
 				obstaclePos = obstaclePosWidth
 				obstacle.style.left = `${obstaclePos}px`
 
