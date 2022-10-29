@@ -69,7 +69,10 @@ a {
 .you-lose {
 	font-family: 'Rampart One', cursive;
 	font-size: 50px;
-	color: #FACDAC;
+	color: #FF4266;
+	animation: changeColor 4s infinite;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
 	margin: 25px 0px 10px 0px;
 	text-align: center;
 }
@@ -110,7 +113,8 @@ a {
 .obstacle {
 	height: 20px;
 	width: 20px;
-	background-color: #E0B89B;
+	background-color: #FF4266;
+	animation: changeColor 4s infinite;
 	position: relative;
 	top: 108px;
 	left: 480px;
