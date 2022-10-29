@@ -12,7 +12,7 @@ let startTimerSpeed = 1
 let obstaclePosWidth = 480
 let obstaclePos = 480
 let gameOver = false
-let randNum = Math.random() * (5 - 2) + 2
+let randNum = Math.random() * (4.5 - 2) + 2
 
 const score = document.createElement("h3")
 score.classList.add("score")
@@ -39,7 +39,6 @@ function jump() {
 
 function startTimer() {
 	const checkCollision = setInterval(() => {
-		console.log(randNum)
 		const playerTop = parseInt(window.getComputedStyle(player).getPropertyValue("top"))
 		let obstacleLeft = parseInt(window.getComputedStyle(obstacle).getPropertyValue("left"))
 		
@@ -102,7 +101,7 @@ function startTimer() {
 
 		if(obstaclePos <= 0) {
 			obstaclePos = obstaclePosWidth
-			randNum = Math.random() * (5 - 2) + 2
+			randNum = Math.random() * (4.5 - 2) + 2
 		}
 	},startTimerSpeed)
 }
