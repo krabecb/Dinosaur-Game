@@ -37,7 +37,8 @@ a {
 	-webkit-text-fill-color: transparent;
 	font-family: 'Roboto', sans-serif;
 	text-align: center;
-	margin: 0;
+	width: max-content;
+	margin: 0 auto;
 	margin-bottom: 5%;
 }
 
