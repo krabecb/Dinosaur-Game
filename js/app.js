@@ -64,8 +64,18 @@ function startTimer() {
 
 			const restartLocation = document.querySelector(".restart")
 			restartLocation.addEventListener("click", () => {
-				const wowAudio = document.querySelector('.wow-audio')
-				wowAudio.play()
+				// const wowAudio = document.querySelector('.wow-audio')
+				// wowAudio.play()
+				let audioTag = document.createElement("audio")
+				audioTag.classList = "audio-wow"
+				audioTag.setAttribute("autoplay", "")
+				containerForGameContainer.appendChild(audioTag)
+
+				let sourceTag = document.createElement("source")
+				sourceTag.setAttribute("src", "./assets/wow.mp3")
+				sourceTag.setAttribute("type", "audio/mp3")
+				document.querySelector('.audio-wow').appendChild(sourceTag)
+
 				obstaclePos = obstaclePosWidth
 				obstacle.style.left = `${obstaclePos}px`
 
