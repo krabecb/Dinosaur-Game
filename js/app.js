@@ -38,6 +38,77 @@ function jump() {
 }
 
 function startTimer() {
+	//Write functions here
+
+	function updateScore() {
+		if(counter > highScoreTracker) {
+			highScoreTracker = counter
+			highScore.innerHTML = `High score: ${highScoreTracker}`
+		}
+	}
+
+	function appendLose() {
+		const youLose = document.createElement("h1")
+		youLose.classList.add("you-lose")
+		youLose.innerHTML = "YOU LOST LMAO"
+		gameContainer.appendChild(youLose)
+	}
+
+	function appendRestart() {
+		const restart = document.createElement("button")
+		restart.classList.add("restart")
+		restart.innerHTML = "Restart"
+		gameContainer.appendChild(restart)
+	}
+
+	function checkExistingWow() {
+		const wowAudioTag = document.querySelector('.audio-wow')
+		if(wowAudioTag !== null) {
+			document.querySelector('.audio-wow').remove()
+		}
+	}
+
+	function appendWowTag() {
+		const audioTag = document.createElement("audio")
+		audioTag.classList = "audio-wow"
+		audioTag.setAttribute("autoplay", "")
+		containerForGameContainer.appendChild(audioTag)
+
+		const sourceTag = document.createElement("source")
+		sourceTag.setAttribute("src", "./assets/wow.mp3")
+		sourceTag.setAttribute("type", "audio/mp3")
+		document.querySelector('.audio-wow').appendChild(sourceTag)
+	}
+
+	function updateObstaclePositionColl() {
+		obstaclePos = obstaclePosWidth
+		obstacle.style.left = `${obstaclePos}px`
+	}
+
+	function activateHighScore() {
+		if(highScoreActive === false) {
+			highScoreActive = true
+			let musicContainerLoc = document.querySelector('.music-container')
+			containerForGameContainer.insertBefore(highScore, musicContainerLoc)
+		}
+	}
+
+	function reset(location) {
+		counter = 0
+		score.innerHTML = `Points: ${counter}`
+		gameOver = false
+		const youLoseLocation = document.querySelector('.you-lose')
+		youLoseLocation.remove()
+		location.remove()
+	}
+
+	function updateObstaclePositionEnd() {
+		if(obstaclePos <= 0) {
+			obstaclePos = obstaclePosWidth
+			randNum = Math.random() * (3.5 - 2) + 2
+		}
+	}
+
 	const checkCollision = setInterval(() => {
 		const playerTop = parseInt(window.getComputedStyle(player).getPropertyValue("top"))
 		let obstacleLeft = parseInt(window.getComputedStyle(obstacle).getPropertyValue("left"))
@@ -45,64 +116,24 @@ function startTimer() {
 		obstacle.style.left = `${obstaclePos -= randNum}px`
 
 		if(obstacleLeft <= 50 && obstacleLeft > 30 && playerTop >= 108) {
-			clearInterval(checkCollision)
 			gameOver = true
-
-			if(counter > highScoreTracker) {
-				highScoreTracker = counter
-				highScore.innerHTML = `High score: ${highScoreTracker}`
-			}
-
-			const youLose = document.createElement("h1")
-			youLose.classList.add("you-lose")
-			youLose.innerHTML = "YOU LOST LMAO"
-			gameContainer.appendChild(youLose)
-
-			const restart = document.createElement("button")
-			restart.classList.add("restart")
-			restart.innerHTML = "Restart"
-			gameContainer.appendChild(restart)
+			clearInterval(checkCollision)
+			updateScore()
+			appendLose()
+			appendRestart()
 
 			const restartLocation = document.querySelector(".restart")
 			restartLocation.addEventListener("click", () => {
-				const wowAudioTag = document.querySelector('.audio-wow')
-				if(wowAudioTag !== null) {
-					document.querySelector('.audio-wow').remove()
-				}
-				let audioTag = document.createElement("audio")
-				audioTag.classList = "audio-wow"
-				audioTag.setAttribute("autoplay", "")
-				containerForGameContainer.appendChild(audioTag)
-
-				let sourceTag = document.createElement("source")
-				sourceTag.setAttribute("src", "./assets/wow.mp3")
-				sourceTag.setAttribute("type", "audio/mp3")
-				document.querySelector('.audio-wow').appendChild(sourceTag)
-
-				obstaclePos = obstaclePosWidth
-				obstacle.style.left = `${obstaclePos}px`
-
-				if(highScoreActive === false) {
-					highScoreActive = true
-					let musicContainerLoc = document.querySelector('.music-container')
-					containerForGameContainer.insertBefore(highScore, musicContainerLoc)
-				}
-
-				counter = 0
-				score.innerHTML = `Points: ${counter}`
-				gameOver = false
-				const youLoseLocation = document.querySelector('.you-lose')
-				youLoseLocation.remove()
-				restartLocation.remove()
+				checkExistingWow()
+				appendWowTag()
+				updateObstaclePositionColl()
+				activateHighScore()
+				reset(restartLocation)
 				startTimer()
 				startScoreTracker()
 			})
 		}
-
-		if(obstaclePos <= 0) {
-			obstaclePos = obstaclePosWidth
-			randNum = Math.random() * (3.5 - 2) + 2
-		}
+		updateObstaclePositionEnd()
 	},startTimerSpeed)
 }
 

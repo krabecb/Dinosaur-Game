@@ -43,8 +43,8 @@ a {
 }
 
 .score {
-	font-family: 'Roboto', sans-serif;
 	color: #84B09D;
+	font-family: 'Roboto', sans-serif;
 	margin: 0;
 }
 
@@ -58,8 +58,7 @@ a {
 	height: 200px;
 	width: 500px;
 	border-bottom: 2px solid #FC9D9A;
-	margin: 0;
-	margin-bottom: 5%;
+	margin: 0 0 5% 0;
 }
 
 .music-container {
@@ -68,14 +67,14 @@ a {
 }
 
 .you-lose {
-	font-family: 'Rampart One', cursive;
-	font-size: 50px;
 	color: #FF4266;
 	animation: changeColor 4s infinite;
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
-	margin: 25px 0px 10px 0px;
+	font-family: 'Rampart One', cursive;
+	font-size: 50px;
 	text-align: center;
+	margin: 25px 0px 10px 0px;
 }
 
 .restart {
@@ -90,9 +89,9 @@ a {
 }
 
 .player {
+	background-color: #FF4266;
 	height: 50px;
 	width: 20px;
-	background-color: #FF4266;
 	position:  relative;
 	top: 128px;
 	left: 50px;
@@ -112,10 +111,10 @@ a {
 }
 
 .obstacle {
-	height: 20px;
-	width: 20px;
 	background-color: #FF4266;
 	animation: changeColor 4s infinite;
+	height: 20px;
+	width: 20px;
 	position: relative;
 	top: 108px;
 	left: 480px;
@@ -134,8 +133,9 @@ a {
 }
 
 .high-score {
-	font-family: 'Roboto', sans-serif;
 	color: #FC9D9A;
+	font-family: 'Roboto', sans-serif;
+	margin-top: 0;
 }
 
 .fa-spotify {
@@ -177,7 +177,7 @@ background-color: #E0B89B;
     	}
     	.you-lose {
     		font-size: 25px;
-    		 transform: translate(10px, 0px);
+    		transform: translate(10px, 0px);
     	}
     	.restart {
     		height: 40px;
