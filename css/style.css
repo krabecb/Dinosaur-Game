@@ -4,6 +4,10 @@ body, html {
 	margin: 0;
 }
 
+a {
+	margin-left: 15px;
+}
+
 .container-for-a-container {
 	overflow: hidden;
 }
@@ -55,6 +59,11 @@ body, html {
 	border-bottom: 2px solid #FC9D9A;
 	margin: 0;
 	margin-bottom: 5%;
+}
+
+.music-container {
+	display: flex;
+	align-items: center;
 }
 
 .you-lose {
@@ -122,6 +131,10 @@ body, html {
 .high-score {
 	font-family: 'Roboto', sans-serif;
 	color: #FC9D9A;
+}
+
+.fa-spotify {
+	color: #1DB954;
 }
 
 audio::-webkit-media-controls-panel {

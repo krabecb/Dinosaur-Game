@@ -138,17 +138,29 @@ startButtonLocation.addEventListener("click", () => {
 	startScoreTracker()
 	startButtonLocation.style.display = "none"
 
+	const musicContainer = document.createElement("div")
+	musicContainer.classList = "music-container"
+	containerForGameContainer.appendChild(musicContainer)
+
 	let audioTag = document.createElement("audio")
 	audioTag.classList = "audio"
 	audioTag.setAttribute("controls", "")
 	audioTag.setAttribute("autoplay", "")
 	audioTag.setAttribute("loop", "")
-	containerForGameContainer.appendChild(audioTag)
+	musicContainer.appendChild(audioTag)
 
 	let sourceTag = document.createElement("source")
-	sourceTag.setAttribute("src", "./assets/soundtrack.wav")
+	sourceTag.setAttribute("src", "./assets/soundtrack2.wav")
 	sourceTag.setAttribute("type", "audio/wav")
 	audioTag.appendChild(sourceTag)
+
+	let aTag = document.createElement("a")
+	aTag.setAttribute("href", "https://open.spotify.com/artist/5ccG8z1EBz6gkvep3gTK98?si=E_VxWNaGToWxDUFxHHAnjw")
+	musicContainer.appendChild(aTag)
+
+	let iTag = document.createElement('i')
+	iTag.classList = "fa-brands fa-spotify fa-3x"
+	aTag.appendChild(iTag)
 })
 
 document.body.addEventListener("keyup", (event) => {
